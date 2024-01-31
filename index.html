@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ME Invoice Generator</title>
+    <link rel="icon" href="assets/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <header>
+        <div class="upper-header">
+            <div class="logo-container">
+                <img src="assets/logo.png" alt="ME Company Logo">
+            </div>
+            <span class="tax-invoice-header"> Tax Invoice </span>
+        </div>
+
+        <p> Laxman Bihari Chawl, Bhadran Nagar, Road No. 2, Malad (W), Mumbai 400064 </p>
+        <p> 📞 9833604210 </p>
+        <p class="bold"> GST Tin No - 27BBPPJ7196H1ZZ </p>
+
+        <br><br><br>
+
+        <div class="lower-header">
+            <div class="billed-to-container">
+                <p class="bold uppercase text-left" style="margin-left: 2.5px; font-size: 15px;"> Billed To: </p>
+                <input type="text" name="bt-name" class="bt-input" placeholder="Name">
+                <br>
+                <input type="text" name="bt-address1" class="bt-input" placeholder="Address line 1">
+                <br>
+                <input type="text" name="bt-address2" class="bt-input" placeholder="Address line 2">
+                <br>
+                <input type="text" name="bt-phone" class="bt-input" placeholder="Contact Number">
+                <br>
+                <input type="text" class="bt-input" placeholder="GST Tin Number">
+            </div>
+
+            <div class="invoice-details-container">
+                <p class="invoice-label"> Invoice Number: </p>
+                <input type="number" name="invoice-number" id="invoice-number" placeholder="Invoice Number">
+                <br>
+                <p class="invoice-label"> Invoice Date: </p>
+                <input type="text" name="invoice-number" id="invoice-number" placeholder="DD/MM/YYYY">
+            </div>
+        </div>
+
+        <br><br>
+    </header>
+
+    <main>
+
+        <div class="invoice-body">
+
+            <table>
+
+                <thead>
+                    <th style="width: 60%;">DESCRIPTION</th>
+                    <th>HSN CODE</th>
+                    <th>UNIT</th>
+                    <th>PRICE</th>
+                    <th style="width: 10%;">AMOUNT</th>
+                </thead>
+
+                <tbody id="table-body">
+                    <tr class="single-row">
+                        <td><input type="text" placeholder="Title" class="product-name"></td>
+                        <td><input type="number" placeholder="N/A" class="product-number"></td>
+                        <td><input type="number" placeholder="0" name="unit" class="unit product-number" id="unit" onkeyup="getInput()"></td>
+                        <td><input type="number" placeholder="0" name="price" class="price product-number" id="price" onkeyup="getInput()"></td>
+                        <td><input type="number" placeholder="0" name="amount" class="amount product-number" id="amount" disabled></td>
+                    </tr>
+            
+                    <tr class="last-row button">
+                        <td class="dashed">
+                            <button class="add-button" id="add-row"> Add </button>
+                            <button id="print-button"> Print </button>
+                            <button id="gst-button"> Single GST </button>
+                        </td>
+                        <td class="dashed"></td>
+                        <td class="dashed"></td>
+                        <td class="dashed"></td>
+                        <td class="dashed"></td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <br>
+            <div class="total-container">Sub Total: <input type="text" placeholder="0.00" name="total" class="total" id="total" disabled></div>
+            <div class="total-container single-gst">IGST @ 18%: <input type="text" placeholder="0.00" name="igst" class="igst" id="igst" disabled></div>
+            <div class="total-container double-gst hide">CGST @ 09%: <input type="text" placeholder="0.00" name="cgst" class="cgst" id="cgst" disabled></div>
+            <div class="total-container double-gst hide">SGST @ 09%: <input type="text" placeholder="0.00" name="sgst" class="sgst" id="sgst" disabled></div>
+            <div class="total-container">Net Payable Amount: <input type="text" placeholder="0.00" name="net-total" class="total" id="net-total" disabled></div>
+
+        </div>
+
+        <div class="dashed" style="margin-top: 20px;"></div>
+        <div class="payment-and-office-container d-flex space-between">
+            <div class="payment">
+                <p class="uppercase bold">Payment Instructions</p>
+
+                <table style="padding: 0px; margin: 0px; margin-top: 10px;">
+                    <tbody>
+                        <tr>
+                            <td class="header-col">Amount in Words</td>
+                            <td><span id="amount-in-words" class="uppercase"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="header-col">Bank Name</td>
+                            <td> Indian Bank </td>
+                        </tr>
+                        <tr>
+                            <td class="header-col">Account Name</td>
+                            <td>Mohan Electricals</td>
+                        </tr>
+                        <tr>
+                            <td class="header-col">Account Number</td>
+                            <td>5050532939</td>
+                        </tr>
+                        <tr>
+                            <td class="header-col">IFSC Code</td>
+                            <td>lDlB000K566</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="office-work d-flex">
+                <div class="stamp-sig-box"> <p style="border-bottom: 1px solid black; width: 100%; text-align: center;">Mohan Electricals</p> </div>
+                <p>Authorised Stamp & Signature</p>
+            </div>
+        </div>
+        <div class="tnc">
+            <p class="uppercase bold">Terms & Conditions</p>
+            <p style="margin-top: 5px;">Unless otherwise agreed in writing by the parties, all the invoices are payable within thirty (30) days of the invoice date.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <br>
+        <h2 class="text-center" style="font-family: 'Tangerine', cursive; font-style: normal; font-size: 30px;"> Thank you for your business. </h2>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

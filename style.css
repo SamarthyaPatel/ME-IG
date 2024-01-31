@@ -1,0 +1,375 @@
+body {
+    /* background: lightblue; */
+    margin: 5vh 7.5vw;
+    font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+}
+
+header {
+    /* background: lightcyan; */
+    text-align: center;
+}
+
+p {
+    margin: 0px; padding: 0px;
+    font-size: 13px;
+}
+
+:disabled {
+    background: white;
+}
+
+#invoice-number {
+    -webkit-appearance: none;
+}
+#invoice-number::-webkit-inner-spin-button,
+#invoice-number::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+/* --------------------------------------------  */
+
+.upper-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5vh;
+}
+
+.logo-container {
+    height: 13vh;
+    text-align: center;
+}
+
+.logo-container img {
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.tax-invoice-header {
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 6vh;
+    width: 20vh;
+    font-size: 4vh;
+}
+
+.header-horizontal {
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    margin: 2vh 0px;
+}
+
+/* --------------------------------------------  */
+
+.lower-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .billed-to-container {
+} */
+
+.bt-input {
+    width: 30vh;
+    text-align: left;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    margin-bottom: 2.5px;
+    font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+}
+
+.bt-input:focus {
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.invoice-details-container {
+    text-align: left;
+    font-size: 15px;
+    font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+}
+
+.invoice-label {
+    display:inline-block;
+    width: 14vh;
+    margin-bottom: 2.5px;
+}
+
+#invoice-number {
+    text-align: left;
+    width: 14vh;
+    border: none;
+    outline: none;
+    margin-bottom: 2.5px;
+}
+  
+#invoice-number:focus {
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+/* --------------------------------------------  */
+
+table {
+    table-layout: auto;
+    width: 100%;
+}
+  
+
+table, th, td {
+    border-collapse: collapse;
+}
+
+th {
+    padding: 10px 0px;
+    border-bottom: 1px solid rgb(187, 187, 187);
+    border-bottom-style: dashed;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: gray;
+    text-align: left;
+}
+
+td {
+    padding: 7px 0px;
+    border-bottom: 0.5px solid rgb(226, 226, 226);
+    text-align: left;
+}
+
+.product-number {
+    text-align: left;
+    width: 80%;
+    font-size: 15px;
+    padding: 10px 0px;
+    border: none;
+    outline: none;
+}
+  
+.product-name {
+    width: 90%;
+    text-align: left;
+    font-size: 15px;
+    padding: 10px 0px;
+    border: none;
+    outline: none;
+}
+  
+.product-name:focus {
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow:  11px 11px 22px #d9d9d9,
+    -11px -11px 22px #ffffff;
+}
+  
+.product-number:focus {
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow:  11px 11px 22px #d9d9d9,
+    -11px -11px 22px #ffffff;
+}
+
+.dashed {
+    border-bottom: 1px solid rgb(187, 187, 187);
+    border-bottom-style: dashed;
+}
+
+.last-row {
+    margin-top: -10px;
+}
+
+
+/* Add button */
+
+.add-button {
+  font-size: 13px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.add-button:after {
+  content: "";
+  /* background-color: #ffe54c; */
+  background-color: rgb(8, 186, 245);
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.add-button:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+/* Print Button */
+
+#print-button, #gst-button {
+    font-size: 13px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 20px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-left: 50px;
+}
+  
+#print-button:after {
+    content: "";
+    /* background-color: #ffe54c; */
+    background-color: rgb(8, 71, 245);
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+}
+  
+#print-button:hover:after {
+    top: 0px;
+    left: 0px;
+}
+
+#gst-button:after {
+    content: "";
+    /* background-color: #ffe54c; */
+    background-color: #c1e1c1;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+}
+  
+#gst-button:hover:after {
+    top: 0px;
+    left: 0px;
+}
+
+/* -------------------------------------------------------- */
+
+.total-container {
+    font-size: 20px;
+    text-align: right;
+    width: 100%;
+    padding: 5px 0px;
+
+    text-transform: uppercase;
+
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: black;
+}
+  
+.total-container input[type=text] {
+    width: 10%;
+    font-size: 20px !important;
+    color: black;
+    text-align: right !important;
+    border: none;
+}
+
+.total-container::after {
+    content: "₹";
+}
+
+/* ------------------------------------------------------- */
+
+.payment-and-office-container {
+    margin-top: 20px;
+}
+
+.payment {
+    width: 60%;
+}
+
+.office-work {
+    width: 30%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stamp-sig-box {
+    height: 100px;
+    width: 80%;
+    border: 1px black solid;
+}
+
+.payment td, tr {
+    padding: 0px;
+    font-size: 13px;
+}
+
+.payment .header-col {
+    width: 30%;
+}
+
+.tnc {
+    margin-top: 20px;
+}
+
+
+
+
+
+
+/* ------------------------------------------------------- */
+
+
+
+/* Property Classes */
+
+.bold {
+    font-weight: bold;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.hide {
+    display: none;
+}
