@@ -3,7 +3,7 @@ const tBody = document.getElementById("table-body");
 addNewRow = () => {
     const row = document.createElement("tr");
     row.className = "single-row";
-    row.innerHTML = `<td><input type="text" placeholder="Product name" class="product-name"></td>
+    row.innerHTML = `<td><input type="text" placeholder="Title" class="product-name"></td>
                     <td><input type="number" placeholder="N/A" class="product-number"></td>
                     <td><input type="number" placeholder="0" name="unit" class="unit product-number" id="unit" onkeyup="getInput()"></td>
                     <td><input type="number" placeholder="0" name="price" class="price product-number" id="price" onkeyup="getInput()"></td>
