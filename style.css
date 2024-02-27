@@ -22,10 +22,14 @@ p {
     -webkit-appearance: none;
 }
 
-#invoice-number::-webkit-inner-spin-button,
-#invoice-number::-webkit-calendar-picker-indicator {
+.hide-date input[type="date"]::-webkit-inner-spin-button,
+.hide-date input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
     -webkit-appearance: none;
+}
+
+textarea {
+    overflow: hidden;
 }
 
 /* --------------------------------------------  */

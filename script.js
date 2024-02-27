@@ -84,6 +84,12 @@ print_button.addEventListener("click", () => {
 
     var buttons = document.getElementsByClassName("button");
 
+    var lower_header = document.getElementById("lower-header");
+
+    console.log(lower_header)
+
+    lower_header.classList.add("hide-date");
+
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].classList.add("hide");
     };
@@ -91,9 +97,14 @@ print_button.addEventListener("click", () => {
 
 // Show buttons
 function handleShortcut(event) {
-    if (event.key === "B") {
+    if (event.key === "X") {
         event.preventDefault();
         var buttons = document.getElementsByClassName("button");
+
+        var lower_header = document.getElementById("lower-header");
+
+        lower_header.classList.remove("hide-date");
+        console.log(lower_header)
 
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].classList.remove("hide");
