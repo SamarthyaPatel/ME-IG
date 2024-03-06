@@ -220,16 +220,21 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .add-button:after {
-  content: "";
-  /* background-color: #ffe54c; */
-  background-color: rgb(8, 186, 245);
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  height: 100%;
-  top: 7px;
-  left: 7px;
-  transition: 0.2s;
+    content: "";
+    /* background-color: #ffe54c; */
+    background-color: rgb(8, 186, 245);
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+}
+
+.add-button:focus-visible:after {
+    top: 0px;
+    left: 0px;
 }
 
 .add-button:hover:after {
@@ -268,7 +273,7 @@ input[type=number]::-webkit-outer-spin-button {
     transition: 0.2s;
 }
   
-#print-button:hover:after {
+#print-button:hover:after, #print-button:focus-visible:after {
     top: 0px;
     left: 0px;
 }
@@ -286,7 +291,7 @@ input[type=number]::-webkit-outer-spin-button {
     transition: 0.2s;
 }
   
-#gst-button:hover:after {
+#gst-button:hover:after, #gst-button:focus-visible:after  {
     top: 0px;
     left: 0px;
 }
