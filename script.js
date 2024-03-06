@@ -242,3 +242,8 @@ function convert_number(number, IN_PAISE)
     } 
     return res;
 }
+
+
+// Invoice Number prefix
+
+document.getElementById("invoice-number").value = "ME-2024-";
